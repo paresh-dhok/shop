@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '../ThemeProvider';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -28,8 +28,8 @@ export default function Navbar() {
   return (
     <nav
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/80' 
+        isScrolled
+          ? 'bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/80'
           : 'bg-transparent'
       }`}
     >
@@ -38,7 +38,7 @@ export default function Navbar() {
           <ShoppingBag className="h-6 w-6 text-primary" />
           <span className="text-xl font-bold tracking-tight">Shop Mins</span>
         </div>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:gap-6">
           {navLinks.map((link) => (
@@ -57,17 +57,17 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             aria-label="Toggle theme"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
-            {theme === "dark" ? (
+            {theme === 'dark' ? (
               <SunIcon className="h-5 w-5" />
             ) : (
               <MoonIcon className="h-5 w-5" />
             )}
           </Button>
-          
+
           <Button className="hidden md:flex">Get Started</Button>
-          
+
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild>
