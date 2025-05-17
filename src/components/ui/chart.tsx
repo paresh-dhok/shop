@@ -323,8 +323,9 @@ function getPayloadConfigFromPayload(
   key: string
 ) {
   // payload can have 'dataKey' and 'payload' (the original data item)
-  // Try to find labelKey in original data first, fallback to key itself
+  // Try to find the value of 'key' in the original data item first
   const payloadData = payload?.payload ?? {};
+  // if key exists in payloadData, use that value as labelKey, else fallback to key itself
   const labelKey = key in payloadData ? payloadData[key] : key;
   return config[labelKey];
 }
