@@ -6,7 +6,7 @@ import {
   ValueType,
 } from 'recharts/types/component/DefaultTooltipContent';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'; // make sure you have this utility or replace with your own classNames function
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = { light: '', dark: '.dark' } as const;
@@ -322,10 +322,7 @@ function getPayloadConfigFromPayload(
   payload: any,
   key: string
 ) {
-  // payload can have 'dataKey' and 'payload' (the original data item)
-  // Try to find the value of 'key' in the original data item first
   const payloadData = payload?.payload ?? {};
-  // if key exists in payloadData, use that value as labelKey, else fallback to key itself
   const labelKey = key in payloadData ? payloadData[key] : key;
   return config[labelKey];
 }
