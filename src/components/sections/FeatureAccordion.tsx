@@ -1,9 +1,3 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { FeatureItem } from "@/types/feature";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
